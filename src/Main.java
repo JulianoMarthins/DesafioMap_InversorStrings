@@ -12,13 +12,13 @@ public class Main {
         List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
         List<String> strBinaria = nums.stream().map(Integer::toBinaryString).toList();
-        System.out.println(strBinaria + " <= String binárias");
+        System.out.println(strBinaria + " <= Conversão de Interger para String binárias");
 
-        List<String> invertido = strBinaria.stream().map(x -> new StringBuilder(x).reverse().toString()).toList();
+        List<String> invertido = strBinaria.stream().map(x-> new StringBuilder(x).reverse().toString()).toList();
         System.out.println(invertido + " <= String binárias invertidas");
 
-        List<String> reverso = invertido.stream().map(x -> new StringBuilder(x).reverse().toString()).toList();
-        System.out.println(reverso + " <= String revertida");
+        List<Integer> reverso = invertido.stream().map(x-> Integer.parseInt(x, 2)).toList();
+        System.out.println(reverso + " <= Conversão de String binárias para Integer");
 
     }
 }
